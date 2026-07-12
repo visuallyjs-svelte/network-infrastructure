@@ -1,7 +1,7 @@
 <script>
     import { useVisuallyJsUpdate } from "@visuallyjs/browser-ui-svelte";
 
-    let total = 0;
+    let total = $state(0);
 
     useVisuallyJsUpdate((model) => {
         const nodeTotal = model.getNodes().map(n => n.data).reduce((acc, current) => acc + current.monthlyPrice, 0);
